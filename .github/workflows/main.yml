@@ -1,0 +1,35 @@
+name: Frontend Build & Zip
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-and-zip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build # 假设构建命令是npm run build
+
+      - name: Zip Build Artifacts
+        run: |
+          zip -r projects.zip build/ # 假设构建产物在build/目录下
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: projects-zip
+          path: projects.zip
