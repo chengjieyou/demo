@@ -58,11 +58,11 @@ const App = () => {
     return (
         <div className='app'>
             <div className='content'>
-                <div className='main'>{data[idx].content}</div>
+                <div className='main'>{data[idx]?.content}</div>
                 <div className='btn1' onClick={toLeft}>&lt;</div>
                 <div className='btn2' onClick={toRight}>&gt;</div>
             </div>
-            <div className='footer'>{data[idx].author}</div>
+            <div className='footer'>{data[idx]?.author}</div>
         </div>
     );
 }

@@ -13,17 +13,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 .btn1,.btn2{
     position: absolute;
+    width: 20px;
+    height: 40px;
+    line-height: 40px;
+    background-color: aquamarine;
     top: 50%;
     cursor: pointer;
     font-size: 20px;
     transform: translateY(-50%);
 }
 .btn1{
-    left: 10px;
+    left: 20px;
 }
 .btn2{
-    right: 10px;
+    right: 20px;
+}
+.footer{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
 }
